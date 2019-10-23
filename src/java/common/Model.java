@@ -1,7 +1,5 @@
-package app.model;
+package common;
 
-
-import app.entities.Pet;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -29,13 +27,12 @@ public class Model {
         model.add(user);
     }
 
-    public List<String> list() {
-        ArrayList<String> result = (ArrayList<String>) model.stream().map(Pet::getName)
-                .collect(Collectors.toList());
-//        ArrayList<String> result2 = (ArrayList<String>) model.stream().map(Pet::getAge)
-//                .collect(Collectors.toList());
-//        ArrayList<String> result3.add(result);
-//        + result2;
+
+    public List<Pet> list() {
+        ArrayList<Pet> result = (ArrayList<Pet>) model.stream().collect(Collectors.toList());
+
+        // ArrayList<String> result = (ArrayList<String>) model.stream().map(Pet::getName)
+         //       .collect(Collectors.toList());
         return result;
     }
 }

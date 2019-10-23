@@ -1,6 +1,7 @@
-package app.servlets;
+package service;
 
-import app.model.Model;
+import common.Model;
+import common.Pet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,8 +20,10 @@ public class ListServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Model model = Model.getInstance();
-        List<String> names = model.list();
-        request.setAttribute("petNames", names);
+        List<Pet> names = model.list();
+        //List<String> names = model.list();
+        request.setAttribute("petName", names);
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/list.jsp");
         requestDispatcher.forward(request, response);
     }

@@ -1,16 +1,18 @@
-package app.entities;
+package common;
 
 public class Pet {
 
     private String name;
     private String age;
+    private String breed;
 
     public Pet() {
     }
 
-    public Pet(String name, String age) {
+    public Pet(String name, String age, String breed) {
         this.name = name;
         this.age = age;
+        this.breed = breed;
     }
 
     public String getName() {
@@ -24,16 +26,18 @@ public class Pet {
     public String getAge() {
         return age;
     }
-
-    public void setAge(String password) {
-        this.age = password;
+    public void setAge(String age) {
+        this.age = age;
     }
+    public void setBreed(String breed) {this.breed = breed;}
+    public String getBreed() {return breed;}
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Pet{" +
                 "name='" + name + '\'' +
-                ", password='" + age + '\'' +
+                ", age='" + age + '\'' +
+                ", breed='" + breed + '\'' +
                 '}';
     }
 

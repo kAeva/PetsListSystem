@@ -32,7 +32,10 @@
                 <input type="text" name="name" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
             <label>Age:
-                <input type="text" name="pass" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                <input type="text" name="age" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+            </label>
+            <label>Breed:
+                <input type="text" name="breed" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
             <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom">Submit</button>
         </form>

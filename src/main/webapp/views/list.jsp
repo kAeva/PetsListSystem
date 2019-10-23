@@ -1,4 +1,5 @@
-<%@ page import="java.util.*" %><%--
+<%@ page import="java.util.*" %>
+<%@ page import="common.Pet" %><%--
   Created by IntelliJ IDEA.
   User: Spectre
   Date: 22/10/2019
@@ -24,13 +25,17 @@
             <h2>Pets</h2>
         </div>
         <%
-            List<String> names = (List<String>) request.getAttribute("petNames");
+
+            List<Pet> names = (List<Pet>) request.getAttribute("petName");
+            List<String> ages = (List<String>) request.getAttribute("age");
+            List<String> breed = (List<String>) request.getAttribute("breed");
 
             if (names != null && !names.isEmpty()) {
                 out.println("<ul class=\"w3-ul\">");
-                for (String s : names) {
-                    out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
+                for (Pet s : names) {
+                        out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
                 }
+
                 out.println("</ul>");
 
             } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
