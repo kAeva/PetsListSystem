@@ -9,13 +9,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "ListServlet", urlPatterns = {"/list"})
-public class ListServlet extends HttpServlet {
+@WebServlet(name = "PetEditPageServlet", urlPatterns = {"/toedit"})
+public class PetEditPageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       String indexId = request.getParameter("indexId");
+        request.setAttribute("indexId", indexId);
+        String petItem = request.getParameter("petItem");
+        request.setAttribute("petItem", petItem);
 
+
+     doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,8 +31,7 @@ public class ListServlet extends HttpServlet {
         List<Pet> pets = model.list();
         request.setAttribute("pet", pets);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/list.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/listToEdit.jsp");
         requestDispatcher.forward(request, response);
     }
 }
-

@@ -23,8 +23,8 @@ public class Model {
         model = new ArrayList<>();
     }
 
-    public void add(Pet user) {
-        model.add(user);
+    public void add(Pet pet) {
+        model.add(pet);
     }
 
 

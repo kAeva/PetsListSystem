@@ -24,19 +24,21 @@
         <div class="w3-container w3-light-blue">
             <h2>Pets</h2>
         </div>
+
         <%
 
-            List<Pet> names = (List<Pet>) request.getAttribute("petName");
-            List<String> ages = (List<String>) request.getAttribute("age");
-            List<String> breed = (List<String>) request.getAttribute("breed");
+            List<Pet> pets = (List<Pet>) request.getAttribute("pet");
 
-            if (names != null && !names.isEmpty()) {
-                out.println("<ul class=\"w3-ul\">");
-                for (Pet s : names) {
-                        out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
+            if (pets != null && !pets.isEmpty()) {
+
+                    out.println("<ul class=\"w3-ul\">");
+                for (Pet s : pets) {
+                        out.println("<li name=\"petFromList\"class=\"w3-hover-sand\">" + s + "</li>");
                 }
 
                 out.println("</ul>");
+
+
 
             } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
                     +
@@ -44,7 +46,11 @@
                     "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
                     "   <h5>There are no pets yet!</h5>\n" +
                     "</div>");
+
+
+
         %>
+        <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='./toedit'">Edit pets</button>
     </div>
 </div>
 

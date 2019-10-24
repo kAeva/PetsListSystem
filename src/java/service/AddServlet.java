@@ -19,9 +19,16 @@ public class AddServlet extends HttpServlet {
         String breed = request.getParameter("breed");
 
         Pet pet = new Pet(name, age, breed);
+        Pet pet1 = new Pet("Tom", "1", "breed1");
+        Pet pet2 = new Pet("Rory", "2", "breed2");
         Model model = Model.getInstance();
         model.add(pet);
+        model.add(pet1);
+        model.add(pet2);
+
         request.setAttribute("petName", name);
+        request.setAttribute("petAge", age);
+        request.setAttribute("petBreed", breed);
 
 
 
